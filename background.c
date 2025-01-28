@@ -67,6 +67,11 @@ void	free_double_pointer(t_data *data)
 		i++;
 	while (i >= 0)
 		free(data->map->map[i--]);
+	mlx_destroy_image(data->mlx, data->img->player_up);
+	mlx_destroy_image(data->mlx, data->img->player_down);
+	mlx_destroy_image(data->mlx, data->img->player_left);
+	mlx_destroy_image(data->mlx, data->img->player_right);
+	mlx_destroy_image(data->mlx, data->img->background);
 	if (data->mlx)
 		mlx_destroy_display(data->mlx);
 	free(data->mlx);

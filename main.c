@@ -3,11 +3,6 @@
 void	winner(t_data *data)
 {
 	mlx_destroy_window(data->mlx, data->win);
-	mlx_destroy_image(data->mlx, data->img->player_up);
-	mlx_destroy_image(data->mlx, data->img->player_down);
-	mlx_destroy_image(data->mlx, data->img->player_left);
-	mlx_destroy_image(data->mlx, data->img->player_right);
-	mlx_destroy_image(data->mlx, data->img->background);
 	ft_printf("---------------------------------------\n");
 	ft_printf("|			CONGRATULATIONS!!         |\n");
 	ft_printf("|				YOU WON !!            |\n");
