@@ -3,10 +3,10 @@
 /*                                                        :::      ::::::::   */
 /*   validate_input.c                                   :+:      :+:    :+:   */
 /*                                                    +:+ +:+         +:+     */
-/*   By: brogalsk <brogalsk@student.42warsaw.p      +#+  +:+       +#+        */
+/*   By: brogalsk <brogalsk@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2025/01/29 13:05:46 by brogalsk          #+#    #+#             */
-/*   Updated: 2025/01/29 13:05:47 by brogalsk         ###   ########.fr       */
+/*   Updated: 2025/02/03 10:28:02 by brogalsk         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -75,7 +75,7 @@ void	ft_check_content(t_data *data)
 		data->map->diamonds += ft_count_c(data->map->map[y], 'C');
 		y++;
 	}
-	if (player != 1)
+	if (player != 1 || exit != 1)
 		handle_error(data, "Error\nThere is an error in map/\n", 1);
 	if (data->map->diamonds == 0)
 		handle_error(data, "Error\nNo diamond to collect\n", 1);

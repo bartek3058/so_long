@@ -3,10 +3,10 @@
 /*                                                        :::      ::::::::   */
 /*   main.c                                             :+:      :+:    :+:   */
 /*                                                    +:+ +:+         +:+     */
-/*   By: brogalsk <brogalsk@student.42warsaw.p      +#+  +:+       +#+        */
+/*   By: brogalsk <brogalsk@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2025/01/29 13:05:28 by brogalsk          #+#    #+#             */
-/*   Updated: 2025/01/29 13:05:29 by brogalsk         ###   ########.fr       */
+/*   Updated: 2025/02/03 10:37:12 by brogalsk         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -26,7 +26,6 @@ void	winner(t_data *data)
 
 int	ft_key_hook(int keycode, t_data *data)
 {
-	ft_printf("Keycode pressed: %d\n", keycode);
 	if (keycode == ESC)
 		ft_exit(data);
 	else if (keycode == W || keycode == UARROW)
@@ -66,6 +65,8 @@ int	main(int argc, char **argv)
 	t_data	data;
 	t_map	map;
 
+	if (!argv[1])
+		return (ft_printf("map error\n"), 0);
 	window_size(&data, argv);
 	check_filename(argv[1]);
 	map.map = ft_calloc(data.size_y + 1, sizeof(char *));

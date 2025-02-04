@@ -3,10 +3,10 @@
 /*                                                        :::      ::::::::   */
 /*   check_path.c                                       :+:      :+:    :+:   */
 /*                                                    +:+ +:+         +:+     */
-/*   By: brogalsk <brogalsk@student.42warsaw.p      +#+  +:+       +#+        */
+/*   By: brogalsk <brogalsk@student.42warsaw.pl>    +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2025/01/29 13:05:10 by brogalsk          #+#    #+#             */
-/*   Updated: 2025/01/29 13:05:13 by brogalsk         ###   ########.fr       */
+/*   Updated: 2025/01/29 14:52:36 by brogalsk         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -79,7 +79,10 @@ void	check_path_of_collectables(t_data *data, int x, int y)
 				visited[data->size_y] = 0;
 				fill_visited(&visited, data);
 				if (!c_valid_path(data, x, y, visited))
+				{
+					free_double_p(&visited);
 					handle_error(data, "Error!\nNo path collectable.\n", 1);
+				}
 				free_double_p(&visited);
 			}
 			x++;
